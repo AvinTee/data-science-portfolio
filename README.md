@@ -78,6 +78,13 @@ def ConsistencyDecompose(tables):
 Since the maximum difference between the yfinance datasets used for this project's data-collection and the Google Finance tables used as this project's reference data was only 3%, no consistency-fixing cleansing action was taken.
 
 ## Exploratory Data Analysis
+![Figure 4: Trends diagram](images/Graphs_Trends.png)
+
+*Figure 4: Trends diagram*
+
+![Figure 5: Seasonality diagram](images/Graphs_Seasonality.png)
+
+*Figure 5: Seasonality diagram*
 
 Visualising TATA, BMW and Rolls-Royce's train-datasets' trend and seasonality charts showcased that all three stocks exhibited both periodicity and non-zero trends - two time-series properties that violate ARIMA's non-stationarity assumption (Cheng, 2015; Ryan, Haslbeck, and Waldorp, 2025). Therefore, the data was differenced before being fed to ARIMA models.
 
