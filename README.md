@@ -23,6 +23,7 @@ This project uses yfinance-extracted historical daily close-price data from 01/0
 80% of the data was reserved for model-training, 10% for model-validation and the final 10% for model-testing. 
 
 The train-data was validated against DAMA's six quality-dimensions using custom Python functions. The only data-quality issues the validation-functions found were nulls and inconsistencies. 
+
 ```
 def NullsDecompose(tables):
   dt = datetime.datetime.strptime
@@ -42,7 +43,7 @@ def NullsDecompose(tables):
   return nulls.style.format({'% NULLS':'{:.0%}'})
 ```
 
-*Figure 2: Function to check for Nulls*
+*Figure 2: Function to check for nulls*
 
 The 32%, 30% and 31% null data populating the TATA, BMW, and Rolls-Royce’s close-price datasets was patched through linear interpolation.
 
@@ -77,6 +78,7 @@ def ConsistencyDecompose(tables):
 Since the maximum difference between the yfinance datasets used for this project's data-collection and the Google Finance tables used as this project's reference data was only 3%, no consistency-fixing cleansing action was taken.
 
 ## Exploratory Data Analysis
+
 Visualising TATA, BMW and Rolls-Royce's train-datasets' trend and seasonality charts showcased that all three stocks exhibited both periodicity and non-zero trends - two time-series properties that violate ARIMA's non-stationarity assumption (Cheng, 2015; Ryan, Haslbeck, and Waldorp, 2025). Therefore, the data was differenced before being fed to ARIMA models.
 
 Plotting the residuals of the resultant differenced datasets revealed the presence of leptokurtic distributions and outliers, both of which could distort ARIMA's prediction-intervals (Ledolter, 1979; Ledolter, 1989). Therefore, outliers were removed, the resultant nulls were replaced through linear interpolation, and the final outlier-free datasets were transformed through the kurtosis-minimising arcsinh-function to resolve the data's leptokurtic distributions. 
