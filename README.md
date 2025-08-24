@@ -9,7 +9,6 @@ Slimani and Achchab, 2021; Panchal, Ferdouse and Sultana, 2024; Siami-Namini, Ta
 
 While this consensus on ARIMA’s shortcomings is not universal, with
 Ahammad et al.’s (2024) investigation into Apex Food shares demonstrating the contrary, these findings still illustrate ARIMA’s challenges with modelling prices in agitated markets.
-$x=10$
 
 ## Data Infrastructure
 This project used the pandas library's inherent data-quality methods to develop its quality-validation functions, the yfinance API to collect the price-data needed for model-development, the statsmodel package to implement its ARIMA-models, and statistical tests, and the matplotlib module for creating its visualisations. 
@@ -88,6 +87,14 @@ Since the maximum difference between the yfinance datasets used for this project
 *Figure 5: Seasonality diagram*
 
 Visualising TATA, BMW and Rolls-Royce's train-datasets' trend and seasonality charts showcased that all three stocks exhibited both periodicity and non-zero trends - two time-series properties that violate ARIMA's non-stationarity assumption (Cheng, 2015; Ryan, Haslbeck, and Waldorp, 2025). Therefore, the data was differenced before being fed to ARIMA models.
+
+![Figure 6: Residuals diagram](images/Graphs_Residuals.png)
+
+*Figure 6: Residuals diagram*
+
+![Figure 7: Residuals distribution diagram](images/Graphs_Residual_Distribution.png)
+
+*Figure 7: Residuals distribution diagram*
 
 Plotting the residuals of the resultant differenced datasets revealed the presence of leptokurtic distributions and outliers, both of which could distort ARIMA's prediction-intervals (Ledolter, 1979; Ledolter, 1989). Therefore, outliers were removed, the resultant nulls were replaced through linear interpolation, and the final outlier-free datasets were transformed through the kurtosis-minimising arcsinh-function to resolve the data's leptokurtic distributions. 
 
