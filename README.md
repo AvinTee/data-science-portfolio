@@ -16,7 +16,7 @@ This project used the pandas library's inherent data-quality methods to develop 
 ## Data Engineering 
 ![Figure 1: Data Pipeline](images/ARIMA_Project_Data_Pipeline.png)
 
-Figure 1: Data Pipeline
+*Figure 1: Data Pipeline*
 
 This project uses yfinance-extracted historical daily close-price data from 01/01/2020 to 31/07/2025 for its price-trend forecasts.  
 
@@ -41,7 +41,11 @@ def NullsDecompose(tables):
   nulls = pandas.DataFrame.from_dict(nulls)
   return nulls.style.format({'% NULLS':'{:.0%}'})
 ```
+
+*Figure 2: Function to check for Nulls*
+
 The 32%, 30% and 31% null data populating the TATA, BMW, and Rolls-Royce’s close-price datasets was patched through linear interpolation.
+
 ```
 def ConsistencyDecompose(tables):
   inconsistent = {'TABLES':[], 'COLUMNS':[], '% MAX INCONSISTENT':[]}
@@ -67,6 +71,9 @@ def ConsistencyDecompose(tables):
   inconsistent = pandas.DataFrame.from_dict(inconsistent)
   return inconsistent.style.format({'% MAX INCONSISTENT':'{:.0%}'})
 ```
+
+*Figure 3: Function to check for inconsistencies*
+
 Since the maximum difference between the yfinance datasets used for this project's data-collection and the Google Finance tables used as this project's reference data was only 3%, no consistency-fixing cleansing action was taken.
 
 ## Exploratory Data Analysis
