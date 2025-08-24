@@ -10,6 +10,9 @@ Slimani and Achchab, 2021; Panchal, Ferdouse and Sultana, 2024; Siami-Namini, Ta
 While this consensus on ARIMA’s shortcomings is not universal, with
 Ahammad et al.’s (2024) investigation into Apex Food shares demonstrating the contrary, these findings still illustrate ARIMA’s challenges with modelling prices in agitated markets.
 
+## Data Infrastructure
+This project used the pandas library's inherent data-quality methods to develop its quality-validation functions, the yfinance API to collect the price-data needed for model-development, the statsmodel package to implement its ARIMA-models, and statistical tests, and the matplotlib module for creating its visualisations. 
+
 ## Data Engineering 
 
 This project uses yfinance-extracted historical daily close-price data from 01/01/2020 to 31/07/2025 for its price-trend forecasts.  
@@ -41,7 +44,6 @@ Although the low square and absolute errors indicated that the models performed 
 Since only some and not all of the p-values for this project's ARIMA model-variables indicate a failure to reject the null hypothesis, the models were not reformulated.
 
 Inspecting the p-values of different statistical tests show that besides ARIMA's residual normality assumption, the other model assumptions were satisfied by the cleaned and transformed datasets.
-
 
 
 
