@@ -20,9 +20,50 @@ This project uses yfinance-extracted historical daily close-price data from 01/0
 80% of the data was reserved for model-training, 10% for model-validation and the final 10% for model-testing. 
 
 The train-data was validated against DAMA's six quality-dimensions using custom Python functions. The only data-quality issues the validation-functions found were nulls and inconsistencies. 
-
+```
+def NullsDecompose(tables):
+  dt = datetime.datetime.strptime
+  FORMAT = '%Y-%m-%d'
+  COUNT = dt(END, FORMAT) - dt(START, FORMAT)
+  COUNT = COUNT.days
+  nulls = {'TABLES':[], 'COLUMNS':[], '% NULLS':[]}
+  for table, name in tables:
+    _table = table.reset_index()
+    for col in [*_table]:
+      base = _table[col]
+      null_vals = COUNT-base[base.notnull()].count()
+      nulls['% NULLS'].append(null_vals/COUNT)
+      nulls['COLUMNS'].append(col)
+      nulls['TABLES'].append(name)
+  nulls = pandas.DataFrame.from_dict(nulls)
+  return nulls.style.format({'% NULLS':'{:.0%}'})
+```
 The 32%, 30% and 31% null data populating the TATA, BMW, and Rolls-Royce’s close-price datasets was patched through linear interpolation.
-
+```
+def ConsistencyDecompose(tables):
+  inconsistent = {'TABLES':[], 'COLUMNS':[], '% MAX INCONSISTENT':[]}
+  REFDATA = {
+      "TATA Shares" : pandas.read_csv('TATAMOTORS - Reference.csv'),
+      "BMW Shares" : pandas.read_csv('BMW - Reference.csv'),
+      "Rolls-Royce Shares" : pandas.read_csv('RR - Reference.csv')
+  }
+  dt = datetime.datetime.strptime
+  FORMAT = '%d/%m/%Y'
+  for table, name in tables:
+      _table = table.reset_index()
+      _table['Date'] = _table['Date'].dt.tz_localize(None)
+      refsource = REFDATA[name]
+      convert_dt = lambda t: dt(t.split(" ")[0], FORMAT)
+      refsource['Date'] = refsource['Date'].apply(convert_dt)
+      base = _table.merge(right=refsource, how='left', on='Date')
+      COUNT = len(base)
+      base['MATCH'] = (base['Close_x'] - base['Close_y']).abs()/base.iloc[:,1]
+      inconsistent['% MAX INCONSISTENT'].append(base['MATCH'].max())
+      inconsistent['COLUMNS'].append('PRICE')
+      inconsistent['TABLES'].append(name)
+  inconsistent = pandas.DataFrame.from_dict(inconsistent)
+  return inconsistent.style.format({'% MAX INCONSISTENT':'{:.0%}'})
+```
 Since the maximum difference between the yfinance datasets used for this project's data-collection and the Google Finance tables used as this project's reference data was only 3%, no consistency-fixing cleansing action was taken.
 
 ## Exploratory Data Analysis
