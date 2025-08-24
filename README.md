@@ -1,7 +1,7 @@
 # Forecasting British Automobile Stocks' Price-Trends with ARIMA
 
 ## Introduction
-This project seeks to determine how market-volatility affects the short-term future price-trends of three British car-manufacturers' stocks, namely TATA Motors, BMW and Rolls-Royce's .
+This project seeks to determine how market-volatility affects the short-term future price-trends of three British car-manufacturers' stocks, namely TATA Motors, BMW and Rolls-Royce's.
 
 ## Literature Review 
 Researchers’ perspectives regarding the effectiveness of ARIMA-based share-price forecasting has shifted in recent years. Despite ARIMA’s historical popularity in time-series modelling (Zhang, 2003), current multi-method quantitative studies investigating share-price and demand-modelling have outlined that the technique’s prediction-power and forecast-accuracy were inferior to deep-learning’s (Bousqaoui,
@@ -9,6 +9,7 @@ Slimani and Achchab, 2021; Panchal, Ferdouse and Sultana, 2024; Siami-Namini, Ta
 
 While this consensus on ARIMA’s shortcomings is not universal, with
 Ahammad et al.’s (2024) investigation into Apex Food shares demonstrating the contrary, these findings still illustrate ARIMA’s challenges with modelling prices in agitated markets.
+$x=10$
 
 ## Data Infrastructure
 This project used the pandas library's inherent data-quality methods to develop its quality-validation functions, the yfinance API to collect the price-data needed for model-development, the statsmodel package to implement its ARIMA-models, and statistical tests, and the matplotlib module for creating its visualisations. 
