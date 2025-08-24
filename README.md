@@ -14,7 +14,7 @@ Ahammad et al.’s (2024) investigation into Apex Food shares demonstrating the 
 This project used the pandas library's inherent data-quality methods to develop its quality-validation functions, the yfinance API to collect the price-data needed for model-development, the statsmodel package to implement its ARIMA-models, and statistical tests, and the matplotlib module for creating its visualisations. 
 
 ## Data Engineering 
-
+![Figure 1: Data Pipeline](images/ARIMA_Project_Data_Pipeline.png)
 This project uses yfinance-extracted historical daily close-price data from 01/01/2020 to 31/07/2025 for its price-trend forecasts.  
 
 80% of the data was reserved for model-training, 10% for model-validation and the final 10% for model-testing. 
