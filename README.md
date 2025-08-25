@@ -96,7 +96,13 @@ Visualising TATA, BMW and Rolls-Royce's train-datasets' trend and seasonality ch
 
 *Figure 7: Residuals distribution diagram*
 
-Plotting the residuals of the resultant differenced datasets revealed the presence of leptokurtic distributions and outliers, both of which could distort ARIMA's prediction-intervals (Ledolter, 1979; Ledolter, 1989). Therefore, outliers were removed, the resultant nulls were replaced through linear interpolation, and the final outlier-free datasets were transformed through the kurtosis-minimising arcsinh-function to resolve the data's leptokurtic distributions. 
+Plotting the residuals of the resultant differenced datasets revealed the presence of leptokurtic distributions and outliers, both of which could distort ARIMA's prediction-intervals (Ledolter, 1979; Ledolter, 1989). 
+
+![Figure 8: Heatmap comparing transformations' kurtosis-reduction](images/Graphs_Transformations_Comparison.png)
+
+*Figure 8: Heatmap comparing transformations' kurtosis-reduction*
+
+Therefore, outliers were removed, the resultant nulls were replaced through linear interpolation, and the final outlier-free datasets were transformed through the kurtosis-minimising arcsinh-function to resolve the data's leptokurtic distributions. 
 
 ## Data Analysis
 The null hypothesis this project posits is that market volatility does not affect TATA, BMW and Rolls-Royce's future price-trends, with the alternative stating that there is some effect.
