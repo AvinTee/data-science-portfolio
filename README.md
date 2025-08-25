@@ -109,6 +109,10 @@ The null hypothesis this project posits is that market volatility does not affec
 
 The Akaike-Information-Criteria (AIC) for different model-orders were compared to determine which ARIMA-models should be used for TATA, BMW and Rolls-Royce's price-trend forecasts. Only model-orders with a differencing level of 0 were considered to reflect the fact that project's train-datasets have already undergone differencing.
 
+![Figure 9: AIC table](images/AIC_Table.png)
+
+*Figure 9: AIC table*
+
 Since ARIMA(0,0,3), ARIMA(0,0,2) and ARIMA(3,0,3) minimise the AIC-scores for TATA, BMW, and Rolls-Royce's train-data, respectively, they were chosen as this project's ARIMA-models.
 
 However, ARIMA's predicted price-trends did not seem to fit the stock-price data well. Therefore, the most recent regimes of each of TATA, BMW and Rolls-Royce's close-price data were used to re-train the ARIMA-models, and determine new model-orders.
