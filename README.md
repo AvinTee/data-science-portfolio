@@ -115,6 +115,14 @@ The Akaike-Information-Criteria (AIC) for different model-orders were compared t
 
 Since ARIMA(0,0,3), ARIMA(0,0,2) and ARIMA(3,0,3) minimise the AIC-scores for TATA, BMW, and Rolls-Royce's train-data, respectively, they were chosen as this project's ARIMA-models.
 
+![Figure 10: Validation-set predictions](images/Graphs_Model_Validation.png)
+
+*Figure 10: Validation-set predictions*
+
+![Figure 11: Stock-price regimes](images/Graphs_Regimes.png)
+
+*Figure 11: Stock-price regimes*
+
 However, ARIMA's predicted price-trends did not seem to fit the stock-price data well. Therefore, the most recent regimes of each of TATA, BMW and Rolls-Royce's close-price data were used to re-train the ARIMA-models, and determine new model-orders.
 
 Although the low square and absolute errors indicated that the models performed well on the test-data, the fact that the error-metrics decrease from the validation-set to the test-set also implies that the test-data was too easy (Sivakumar, Parthasarathy, and Padmapriya, 2014). Future work could explore Bootstrap resampling to increase the test-set's diversity and achieve a more realistic picture of the models' performance (LeBaron and Weigend, 1998). 
