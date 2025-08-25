@@ -147,6 +147,9 @@ Since only some and not all of the p-values for this project's ARIMA model-varia
 
 Inspecting the p-values of different statistical tests show that besides ARIMA's residual normality assumption, the other model assumptions were satisfied by the cleaned and transformed datasets.
 
+![Figure 16: 1.5 month forecast](images/Graphs_Forecast.png)
+
+*Figure 16: 1.5 month forecast*
 
 This project's key findings were it expects with 95% confidence that TATA, BMW and Rolls-Royce's stock-prices will flatten from 01/08/2025 to 15/09/2025. The commercial impact of these findings is that it should motivate British car-businesses to tackle the conservative growth-prospects of the auto-industry.
 
