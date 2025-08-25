@@ -125,11 +125,28 @@ Since ARIMA(0,0,3), ARIMA(0,0,2) and ARIMA(3,0,3) minimise the AIC-scores for TA
 
 However, ARIMA's predicted price-trends did not seem to fit the stock-price data well. Therefore, the most recent regimes of each of TATA, BMW and Rolls-Royce's close-price data were used to re-train the ARIMA-models, and determine new model-orders.
 
+![Figure 12: Validation-set error-metrics](images/Validation_Error_Metrics.png)
+
+*Figure 12: Validation-set error metrics*
+
+![Figure 13: Test-set error-metrics](images/Test_Set_Error_Metrics.png)
+
+*Figure 13: Test-set error metrics*
+
 Although the low square and absolute errors indicated that the models performed well on the test-data, the fact that the error-metrics decrease from the validation-set to the test-set also implies that the test-data was too easy (Sivakumar, Parthasarathy, and Padmapriya, 2014). Future work could explore Bootstrap resampling to increase the test-set's diversity and achieve a more realistic picture of the models' performance (LeBaron and Weigend, 1998). 
+
+![Figure 14: Hypothesis test p-values](images/Hypothesis_Test_Results.png)
+
+*Figure 14: Hypothesis test's p-values*
 
 Since only some and not all of the p-values for this project's ARIMA model-variables indicate a failure to reject the null hypothesis, the models were not reformulated.
 
+![Figure 15: Statistical tests' p-values](images/Statistical_Test_Results.png)
+
+*Figure 15: Statistical tests' p-values*
+
 Inspecting the p-values of different statistical tests show that besides ARIMA's residual normality assumption, the other model assumptions were satisfied by the cleaned and transformed datasets.
+
 
 This project's key findings were it expects with 95% confidence that TATA, BMW and Rolls-Royce's stock-prices will flatten from 01/08/2025 to 15/09/2025. The commercial impact of these findings is that it should motivate British car-businesses to tackle the conservative growth-prospects of the auto-industry.
 
