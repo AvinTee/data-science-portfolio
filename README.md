@@ -172,7 +172,7 @@ Ledolter, J. (1979), ‘Inference robustness of arima models under non-normality
 
 Ledolter, J. (1989), ‘The effect of additive outliers on the forecasts from arima models’, International Journal of Forecasting 5(2), pp. 231–240. doi:10.1016/0169-2070(89)90090-3
 
-Panchal, S. A., Ferdouse, L. & Sultana, A. (2024), Comparative analysis of arima and lstm models for stock price prediction, in ‘2024 IEEE/ACIS 27th International Conference on Software Engineering, Artifi￾cial Intelligence, Networking and Parallel/Distributed Computing (SNPD)’, IEEE, pp. 240–244. Available at:
+Panchal, S. A., Ferdouse, L. & Sultana, A. (2024), Comparative analysis of arima and lstm models for stock price prediction, in ‘2024 IEEE/ACIS 27th International Conference on Software Engineering, Artificial Intelligence, Networking and Parallel/Distributed Computing (SNPD)’, IEEE, pp. 240–244. Available at:
 https://ieeexplore.ieee.org/abstract/document/10673919 (Accessed: 2025-06-24).
 
 Ryan, O., Haslbeck, J. M. & Waldorp, L. J. (2025), ‘Non-stationarity in time-series analysis: Modeling stochastic and deterministic trends’, Multivariate Behavioral Research 60(3), pp. 556–588. doi:10.1080/00273171.2024.2436413.
