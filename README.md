@@ -4,14 +4,14 @@
 This project seeks to determine how market-volatility affects the short-term future price-trends of three British car-manufacturers' stocks, namely TATA Motors, BMW and Rolls-Royce's.
 
 ## Literature Review 
-Researchers’ perspectives regarding the effectiveness of ARIMA-based share-price forecasting has shifted in recent years. Despite ARIMA’s historical popularity in time-series modelling (Zhang, 2003), current multi-method quantitative studies investigating share-price and demand-modelling have outlined that the technique’s prediction-power and forecast-accuracy were inferior to deep-learning’s (Bousqaoui,
-Slimani and Achchab, 2021; Panchal, Ferdouse and Sultana, 2024; Siami-Namini, Tavakoli and Namin, 2018; Adebiyi et al., 2014).
+Researchers’ perspectives regarding the effectiveness of ARIMA-based share-price forecasting has shifted in recent years. Despite ARIMA’s historical popularity in time-series modelling (Zhang, 2003), current multi-method quantitative studies investigating share-price and demand-modelling have outlined that the technique’s prediction-power and forecast-accuracy were inferior to deep-learning’s (Bousqaoui, Slimani and Achchab, 2021; Panchal, Ferdouse and Sultana, 2024; Siami-Namini, Tavakoli and Namin, 2018; Adebiyi et al., 2014).
 
 While this consensus on ARIMA’s shortcomings is not universal, with
 Ahammad et al.’s (2024) investigation into Apex Food shares demonstrating the contrary, these findings still illustrate ARIMA’s challenges with modelling prices in agitated markets.
 
 ## Data Infrastructure
-This project used the pandas library's inherent data-quality methods to develop its quality-validation functions, the yfinance API to collect the price-data needed for model-development, the statsmodel package to implement its ARIMA-models, and statistical tests, and the matplotlib module for creating its visualisations. 
+This project used the pandas library's inherent data-quality methods to develop its quality-validation functions, the yfinance API to collect the price-data needed for model-development, the statsmodel package to implement its ARIMA-models and statistical tests, and the matplotlib module to create visualisations
+to support its analyses.
 
 ## Data Engineering 
 ![Figure 1: Data Pipeline](images/ARIMA_Project_Data_Pipeline.png)
@@ -22,7 +22,7 @@ This project uses yfinance-extracted historical daily close-price data from 01/0
 
 80% of the data was reserved for model-training, 10% for model-validation and the final 10% for model-testing. 
 
-The train-data was validated against DAMA's six quality-dimensions using custom Python functions. The only data-quality issues the validation-functions found were nulls and inconsistencies. 
+The train-data was validated against DAMA's six quality-dimensions (Government Data Quality Hub, 2021) using custom Python functions. The only data-quality issues the validation-functions found were nulls and inconsistencies. 
 
 ```
 def NullsDecompose(tables):
@@ -156,6 +156,32 @@ This project's key findings were it expects with 95% confidence that TATA, BMW a
 ## Conclusion
 This report concludes that market-volatility is predicted to slow down TATA, BMW and Rolls-Royce's price-growth. In the future, further work could be done to assess the reliability of these results.
 
+## References
+Adebiyi, A. A., Adewumi, A. O. & Ayo, C. K. (2014), ‘Comparison of arima and artificial neural networks models for stock price prediction’, Journal of Applied Mathematics 2014(1). doi:10.1155/2014/614342
+
+Ahammad, I., Sarkar, W. A., Meem, F. A., Ferdus, J., Ahmed, M. K., Rahman, M. R., Sultana, R. & Islam, M. S. (2024), ‘Advancing stock market predictions with time series analysis including lstm and arima’, Cloud Computing and Data Science pp. 226–241. doi:10.37256/ccds.5220244470
+
+Bousqaoui, H., Slimani, I. & Achchab, S. (2021), ‘Comparative analysis of short-term demand predicting models using arima and deep learning’, International Journal of Electrical and Computer Engineering 11(4), 3319. doi:10.11591/ijece.v11i4.pp3319-3328
+
+Cheng, C., Sa-Ngasoongsong, A., Beyca, O., Le, T., Yang, H., Kong, Z. & Bukkapatnam, S. T. (2015), ‘Time series forecasting for nonlinear and non-stationary processes: a review and comparative study’, Iie Transactions 47(10), 1053–1071. doi:10.1080/0740817X.2014.999180
+
+Government Data Quality Hub (2021), ‘Meet the data quality dimensions’, Available at: https://www.gov.uk/government/news/meet-the-data-quality-dimensions. (Accessed: 2025-06-28).
+
+Ledolter, J. (1979), ‘Inference robustness of arima models under non-normality—special application to stock price data’, Metrika 26(1), pp. 43–56. Available at: https://pure.iiasa.ac.at/id/eprint/609/1/RM-76-075.pdf (Accessed:
+2025-07-28).
+
+Ledolter, J. (1989), ‘The effect of additive outliers on the forecasts from arima models’, International Journal of Forecasting 5(2), pp. 231–240. doi:10.1016/0169-2070(89)90090-3
+
+Panchal, S. A., Ferdouse, L. & Sultana, A. (2024), Comparative analysis of arima and lstm models for stock price prediction, in ‘2024 IEEE/ACIS 27th International Conference on Software Engineering, Artifi￾cial Intelligence, Networking and Parallel/Distributed Computing (SNPD)’, IEEE, pp. 240–244. Available at:
+https://ieeexplore.ieee.org/abstract/document/10673919 (Accessed: 2025-06-24).
+
+Ryan, O., Haslbeck, J. M. & Waldorp, L. J. (2025), ‘Non-stationarity in time-series analysis: Modeling stochastic and deterministic trends’, Multivariate Behavioral Research 60(3), pp. 556–588. doi:10.1080/00273171.2024.2436413.
+
+Siami-Namini, S., Tavakoli, N. & Namin, A. S. (2018), A comparison of arima and lstm in forecasting time series, in ‘2018 17th IEEE international conference on machine learning and applications (ICMLA)’, IEEE, pp. 1394–1401. Available at: https://par.nsf.gov/servlets/purl/10186768 (Accessed: 2025-06-24).
+
+Sivakumar, M., Parthasarathy, S. & Padmapriya, T. (2024), ‘Trade-off between training and testing ratio in machine learning for medical image processing’, PeerJ Computer Science 10, e2245.
+
+Zhang, G. P. (2003), ‘Time series forecasting using a hybrid arima and neural network model’, Neurocomputing 50, pp. 159–175. doi:10.1016/S0925-2312(01)00702-0.
 
 
 
