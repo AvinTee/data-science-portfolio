@@ -13,7 +13,7 @@ Ahammad et al.’s (2024) investigation into Apex Food shares demonstrating the 
 This project used the pandas library's inherent data-quality methods to develop its quality-validation functions, the yfinance API to collect the price-data needed for model-development, the statsmodels package to implement its ARIMA-models and statistical tests, and the matplotlib module to create visualisations to support its analyses.
 
 ## Data Engineering 
-![Figure 1: Data Pipeline](images/ARIMA_Project_Data_Pipeline.png)
+![Figure 1: Data Pipeline](images/BritishMotorStocks_ETA.png)
 
 *Figure 1: Data Pipeline*
 
