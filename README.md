@@ -140,11 +140,11 @@ Although the low test-set error-metrics indicated that the models performed well
 
 Since only some and not all of the p-values for this project's ARIMA model-variables indicate a failure to reject the null hypothesis, the models were not reformulated.
 
-![Figure 15: Statistical tests' p-values](images/Statistical_Test_Results.png)
+![Figure 15: Statistical tests' p-values](images/Fixed_Statistical_Tests.png)
 
 *Figure 15: Statistical tests' p-values*
 
-Inspecting the p-values of different statistical tests, namely the Augmented Dickey-Fuller (ADF), Ljung-Box (LB), Jarque-Bera (JB) and Breusch-Pagan (BP) tests, showed that besides ARIMA's residual normality assumption, the other model assumptions were satisfied by the cleaned and transformed datasets (Dickey and Fuller, 1979; Ljung and Box, 1978; Jarque and Bera, 1987; Breusch and Pagan, 1979; Nelson, 1998; Ledolter, 1979).
+Inspecting the p-values of different statistical tests, namely the Augmented Dickey-Fuller (ADF), Ljung-Box (LB), Jarque-Bera (JB) and Breusch-Pagan (BP) tests, showed that besides ARIMA's residual normality and heteroscedasticity assumptions, the other model assumptions were satisfied by the cleaned and transformed datasets (Dickey and Fuller, 1979; Ljung and Box, 1978; Jarque and Bera, 1987; Breusch and Pagan, 1979; Nelson, 1998; Ledolter, 1979).
 
 ![Figure 16: 1.5 month forecast](images/Graphs_Forecast.png)
 
